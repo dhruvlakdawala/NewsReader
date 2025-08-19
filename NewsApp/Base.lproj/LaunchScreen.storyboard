@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCe-mg-gkF">
+                                <rect key="frame" x="71.000000000000014" y="280.66666666666669" width="251.33333333333337" height="291.00000000000006"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newspaper.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tfJ-ag-eN8">
+                                        <rect key="frame" x="25.666666666666671" y="20.333333333333329" width="200" height="199.66666666666669"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="5CQ-ke-EQV"/>
+                                            <constraint firstAttribute="width" constant="200" id="7X8-Y5-iGA"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News (Articles)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxI-Mw-uUG">
+                                        <rect key="frame" x="20" y="235.99999999999994" width="211.33333333333334" height="35"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="wxI-Mw-uUG" firstAttribute="centerX" secondItem="tfJ-ag-eN8" secondAttribute="centerX" id="9ca-ce-nb3"/>
+                                    <constraint firstItem="tfJ-ag-eN8" firstAttribute="centerX" secondItem="mCe-mg-gkF" secondAttribute="centerX" id="CnX-IM-Ctr"/>
+                                    <constraint firstItem="wxI-Mw-uUG" firstAttribute="top" secondItem="tfJ-ag-eN8" secondAttribute="bottom" constant="16" id="Lbl-Top-Img-16"/>
+                                    <constraint firstAttribute="trailing" secondItem="wxI-Mw-uUG" secondAttribute="trailing" constant="20" symbolic="YES" id="TDb-Jn-cwK"/>
+                                    <constraint firstItem="tfJ-ag-eN8" firstAttribute="top" secondItem="mCe-mg-gkF" secondAttribute="top" constant="20" id="Top-Img-20"/>
+                                    <constraint firstAttribute="bottom" secondItem="wxI-Mw-uUG" secondAttribute="bottom" constant="20" symbolic="YES" id="W3e-Pp-Ujw"/>
+                                    <constraint firstItem="wxI-Mw-uUG" firstAttribute="leading" secondItem="mCe-mg-gkF" secondAttribute="leading" constant="20" symbolic="YES" id="xTI-B6-iyl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mCe-mg-gkF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Ctr-Cont-X"/>
+                            <constraint firstItem="mCe-mg-gkF" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Ctr-Cont-Y"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="newspaper.fill" catalog="system" width="128" height="112"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
