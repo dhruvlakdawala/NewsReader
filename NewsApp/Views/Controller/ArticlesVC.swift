@@ -173,15 +173,8 @@ extension ArticlesVC: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension ArticlesVC: UITableViewDelegate {
-    /// Handles row selection. Opens the selected article URL in Safari.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         
-        let article = viewModel.filteredArticles[indexPath.row]
-        
-        if let url = URL(string: article.url) {
-            UIApplication.shared.open(url)
-        }
     }
 }
 
