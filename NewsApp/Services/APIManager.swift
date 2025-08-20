@@ -102,13 +102,17 @@ class APIManager: APIManagerProtocol {
     ///   - completion: Returns either a list of `Article` objects or an error.
     private func performRequest(urlString: String, completion: @escaping (Result<[Article], Error>) -> Void) {
         guard let url = URL(string: urlString) else {
+            print("Invalid URL: \(urlString)")
             completion(.failure(NetworkError.invalidURL))
             return
         }
         
+        print("API URL: \(urlString)")
+        
         session.dataTask(with: url) { data, response, error in
             // Handle network or server error
             if let error = error {
+                print("Network Error: \(error.localizedDescription)")
                 DispatchQueue.main.async {
                     completion(.failure(error))
                 }
@@ -117,10 +121,20 @@ class APIManager: APIManagerProtocol {
             
             // Ensure data is not nil
             guard let data = data else {
+                print("No data received from server.")
                 DispatchQueue.main.async {
                     completion(.failure(NetworkError.noData))
                 }
                 return
+            }
+            
+            // Debug: Print API raw JSON response in readable format
+            if let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
+               let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted),
+               let jsonString = String(data: jsonData, encoding: .utf8) {
+                print("API Response JSON:\n\(jsonString)")
+            } else {
+                print("Failed to convert API response to JSON String.")
             }
             
             // Decode JSON response into `NewsResponse`
@@ -130,6 +144,7 @@ class APIManager: APIManagerProtocol {
                     completion(.success(newsResponse.articles))
                 }
             } catch {
+                print("JSON Decoding Error: \(error.localizedDescription)")
                 DispatchQueue.main.async {
                     completion(.failure(error))
                 }
